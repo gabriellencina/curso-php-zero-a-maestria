@@ -1,26 +1,18 @@
 <?php
 
-$dados = [
-            "nome" => "Gabriel",    "idade" => 21,
-            "nome" => "Felipe",     "idade" => 25,
-            "nome" => "João",       "idade" => 30,
-            "nome" => "Mylena",     "idade" => 41
-         ];
+$pessoas = ['Gabriel' => 21, 'Lencina' => 22, 'Pereira' => 23];
 
-echo "<table>";
-echo "<tr>
-        <th>Nome</th>
-        <th>Idade</th>
-     </tr>";
+?>
 
-foreach($dados as $pessoa){
-        
-        echo "<tr>";
-        echo "<td>".$pessoa['nome']."</td>";
-        echo "<td>".$pessoa['idade']."</td>";
-        echo "</tr>";
-
-}
-
-echo "</table>";
-
+<table border="1">
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+        </tr>
+        <?php foreach($pessoas as $nome => $idade): ?>
+                <tr>
+                   <td><?= $nome; ?></td>
+                   <td><?= $idade;?></td>
+                </tr>
+        <?php endforeach; ?>
+</table>
